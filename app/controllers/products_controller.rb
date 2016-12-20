@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-  	Product.__elasticsearch__.import
 
   	def index
   		if params[:product] == nil
@@ -8,11 +7,12 @@ class ProductsController < ApplicationController
 			@products = Product.all
   		elsif params[:product][:category] != nil and params[:product][:name] == ''
   			@category = Category.find_by(name:params[:product][:category])
-			@products = Product.__elasticsearch__.search(@category.id).records
+			@products = Product.where(category:@category.id)
 		elsif params[:product][:name] != '' and params[:product][:category] == nil
-			@products = Product.__elasticsearch__.search(params[:product][:name]).records
+			@name = params[:product][:name]
+			@products = Product.where("name like ?", "%" + params[:product][:name] + "%")
 		end
-  		@top_product = Product.last
+		@top_product = Product.last
   		@hot_products = Product.limit(2)
   	end
 

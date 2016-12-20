@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-	include Elasticsearch::Model
+	#include Elasticsearch::Model
 	# settings index: { number_of_shards: 1 }
 	belongs_to :category
 	has_many :product_orders
