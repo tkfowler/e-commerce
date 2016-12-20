@@ -1,0 +1,55 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body.users {
+
+		background-image: url("home_background.jpg");
+		margin: 0px auto;
+		background-repeat: no-repeat;
+		width: 100%;
+		padding: 20px 40px 0px 40px;
+
+	form {
+		margin-top: 50px;
+	}
+
+	h2 {
+		border-radius: 5px;
+		color: black;
+		padding: 5px;
+		width: 180px;
+	}
+
+	.form-control {
+		border: 2px solid darkgrey;
+	}
+
+	#reg, #login {
+		display: block;
+	}
+
+	#login {
+		margin-left: 60%;
+	}
+
+	#reg {
+		width: 35%;
+		float: right;
+		margin-top: 4%;
+	}
+
+	.login-head, .login-form { 
+		display: inline;
+		vertical-align: top;
+	}
+
+	.login-head {
+		padding: 2px 5px;
+	}
+
+	.error {
+		margin-bottom: 5px;
+	}
+}

@@ -1,0 +1,163 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">My Cart</a></li>
+        <li>
+            <a id="logout-button" href="#">Logout</a>
+                <form id="logout" action="/sessions" method="post">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+                    <input type="hidden" name="_method" value="delete">
+            </form>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <p class="lead">Search By...</p>
+                <form>
+                	<label for="category">Category</label>
+                	<select name="category" class="form-control">
+					  <option value="cat1">1</option>
+					  <option value="cat1">2</option>
+					  <option value="cat1">3</option>
+					  <option value="cat1">4</option>
+					  <option value="cat1">5</option>
+					</select>
+					<br>
+                	<label for="category">OR ...</label>
+                	<br>
+			        <div class="form-group">
+                	<label for="category">Product</label>
+			          <input type="text" class="form-control" placeholder="Search">
+			        </div>
+			        <button type="submit" class="btn btn-default">Search</button>
+		      </form>
+            </div>
+
+            <div class="col-md-9">
+
+                <div class="row carousel-holder">
+
+                    <div class="col-md-12">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                <% @products.each do |product| %>
+	                    <div class="col-sm-4 col-lg-4 col-md-4">
+	                        <div class="thumbnail">
+	                            <%= image_tag product.avatar.url, :class => 'product-all' %>
+	                            <div class="caption">
+	                                <h4 class="pull-right">$<%= product.price %></h4>
+	                                <h4><a href="/products/<%= product.id %>"><%= product.name %></a>
+	                                </h4>
+	                                <p><%= product.description %>.</p>
+	                            </div>
+	                            <div class="ratings">
+	                                <p class="pull-right">15 reviews</p>
+	                                <p>
+	                                    <span class="glyphicon glyphicon-star"></span>
+	                                    <span class="glyphicon glyphicon-star"></span>
+	                                    <span class="glyphicon glyphicon-star"></span>
+	                                    <span class="glyphicon glyphicon-star"></span>
+	                                    <span class="glyphicon glyphicon-star"></span>
+	                                </p>
+	                            </div>
+	                        </div>
+	                    </div>
+                    <% end %>
+                </div>
+
+            </div>
+
+        </div>
+        <form class="product-form" action="/products" method="post" enctype="multipart/form-data" >
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			  <div class="form-group">
+                <label for="select">Product Name</label>
+			    <input type="text" class="form-control" id="name" name="product[name]" placeholder="Product Name">
+			  </div>
+              <div class="form-group">
+                <label for="product[category]">Category</label>
+                <%= select_tag :'product[category]', options_for_select(categories) %>
+              </div>
+			   <div class="form-group">
+                <label for="select">Description</label>
+			    <input type="text" class="form-control" id="description" name="product[description]" placeholder="Product Desription">
+			  </div>
+               <div class="form-group">
+                <label for="select">Price</label>
+                <input type="text" class="form-control" id="price" name="product[price]" placeholder="Price">
+              </div>
+			   <div class="form-group">
+                <label for="select">Image</label>
+			    <input type="file" class="form-control" id="image" name="product[avatar]" placeholder="Product Image">
+			  </div>
+			  <button type="submit" class="btn btn-primary">Add Product</button>
+		  </form>
+
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
