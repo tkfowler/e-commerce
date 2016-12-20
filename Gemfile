@@ -35,6 +35,10 @@ gem 'pry'
 
 gem 'paperclip', '~>4.2'
 
+gem 'elasticsearch-model',
+  git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
+gem 'elasticsearch-rails',
+  git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 
 # Use unicorn as the app server
 # gem 'unicorn'

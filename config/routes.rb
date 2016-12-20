@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get 'admins/index'
+
 root 'users#index'
 get 'users' => 'users#index'
 get 'products' => 'products#index'
+get 'products/new' => 'products#new'
 post 'users' => 'users#create'
 post 'products' => 'products#create'
 post 'sessions' => 'sessions#create'

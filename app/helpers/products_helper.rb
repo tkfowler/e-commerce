@@ -1,5 +1,5 @@
 module ProductsHelper
 	def categories
-		%w(sports furniture electronics)
+		['please select', 'sports', 'furniture', 'electronics']
 	end
 end

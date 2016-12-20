@@ -1,0 +1,34 @@
+[2016-12-20 12:07:12,589][INFO ][node                     ] [D'Spayre] version[2.4.3], pid[16146], build[d38a34e/2016-12-07T16:28:56Z]
+[2016-12-20 12:07:12,589][INFO ][node                     ] [D'Spayre] initializing ...
+[2016-12-20 12:07:13,536][INFO ][plugins                  ] [D'Spayre] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2016-12-20 12:07:13,641][INFO ][env                      ] [D'Spayre] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [175.8gb], net total_space [232.6gb], spins? [unknown], types [hfs]
+[2016-12-20 12:07:13,641][INFO ][env                      ] [D'Spayre] heap size [990.7mb], compressed ordinary object pointers [true]
+[2016-12-20 12:07:13,642][WARN ][env                      ] [D'Spayre] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2016-12-20 12:07:17,006][INFO ][node                     ] [D'Spayre] initialized
+[2016-12-20 12:07:17,006][INFO ][node                     ] [D'Spayre] starting ...
+[2016-12-20 12:07:17,140][INFO ][transport                ] [D'Spayre] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
+[2016-12-20 12:07:17,145][INFO ][discovery                ] [D'Spayre] elasticsearch/fWK1XL8dS72E7iK19ym0JQ
+[2016-12-20 12:07:20,190][INFO ][cluster.service          ] [D'Spayre] new_master {D'Spayre}{fWK1XL8dS72E7iK19ym0JQ}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-12-20 12:07:20,206][INFO ][http                     ] [D'Spayre] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
+[2016-12-20 12:07:20,206][INFO ][node                     ] [D'Spayre] started
+[2016-12-20 12:07:20,239][INFO ][gateway                  ] [D'Spayre] recovered [0] indices into cluster_state
+[2016-12-20 12:12:46,469][INFO ][node                     ] [Blob] version[2.4.3], pid[16269], build[d38a34e/2016-12-07T16:28:56Z]
+[2016-12-20 12:12:46,470][INFO ][node                     ] [Blob] initializing ...
+[2016-12-20 12:12:46,969][INFO ][plugins                  ] [Blob] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2016-12-20 12:12:46,990][INFO ][env                      ] [Blob] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [175.8gb], net total_space [232.6gb], spins? [unknown], types [hfs]
+[2016-12-20 12:12:46,990][INFO ][env                      ] [Blob] heap size [990.7mb], compressed ordinary object pointers [true]
+[2016-12-20 12:12:46,991][WARN ][env                      ] [Blob] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2016-12-20 12:12:48,682][INFO ][node                     ] [Blob] initialized
+[2016-12-20 12:12:48,682][INFO ][node                     ] [Blob] starting ...
+[2016-12-20 12:12:48,779][INFO ][transport                ] [Blob] publish_address {127.0.0.1:9301}, bound_addresses {[fe80::1]:9301}, {[::1]:9301}, {127.0.0.1:9301}
+[2016-12-20 12:12:48,785][INFO ][discovery                ] [Blob] elasticsearch/SQ5CXo3WQDuN6glydiIJVA
+[2016-12-20 12:12:51,848][INFO ][cluster.service          ] [D'Spayre] added {{Blob}{SQ5CXo3WQDuN6glydiIJVA}{127.0.0.1}{127.0.0.1:9301},}, reason: zen-disco-join(join from node[{Blob}{SQ5CXo3WQDuN6glydiIJVA}{127.0.0.1}{127.0.0.1:9301}])
+[2016-12-20 12:12:51,873][INFO ][cluster.service          ] [Blob] detected_master {D'Spayre}{fWK1XL8dS72E7iK19ym0JQ}{127.0.0.1}{127.0.0.1:9300}, added {{D'Spayre}{fWK1XL8dS72E7iK19ym0JQ}{127.0.0.1}{127.0.0.1:9300},}, reason: zen-disco-receive(from master [{D'Spayre}{fWK1XL8dS72E7iK19ym0JQ}{127.0.0.1}{127.0.0.1:9300}])
+[2016-12-20 12:12:51,948][INFO ][http                     ] [Blob] publish_address {127.0.0.1:9201}, bound_addresses {[fe80::1]:9201}, {[::1]:9201}, {127.0.0.1:9201}
+[2016-12-20 12:12:51,949][INFO ][node                     ] [Blob] started
+[2016-12-20 12:17:26,428][INFO ][cluster.metadata         ] [D'Spayre] [products] creating index, cause [api], templates [], shards [5]/[1], mappings [product]
+[2016-12-20 12:17:27,170][INFO ][cluster.routing.allocation] [D'Spayre] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[products][0], [products][2], [products][4]] ...]).
+[2016-12-20 12:17:28,290][INFO ][cluster.routing.allocation] [D'Spayre] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[products][4]] ...]).
+[2016-12-20 12:18:46,626][INFO ][cluster.metadata         ] [D'Spayre] [products] update_mapping [product]
+[2016-12-20 12:18:46,748][INFO ][cluster.metadata         ] [D'Spayre] [products] update_mapping [product]
+[2016-12-20 12:18:46,776][INFO ][cluster.metadata         ] [D'Spayre] [products] update_mapping [product]

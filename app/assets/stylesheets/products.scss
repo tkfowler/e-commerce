@@ -3,29 +3,96 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.products {
+
+	.navbar-default {
+		margin-bottom: 0px;
+	}
+
+		.navbar-default a {
+			color: #424242;
+			font-family: 'Oswald';
+		}
+
+	.navbar-header {
+		padding-left: 60px;
+	}
+
+	.navbar-right {
+		padding-right: 30px;
+	}
+
+		.navbar-brand {
+			font-size: 225%;
+		}
+
+	.index-col1 {
+		margin-top: 9%;
+		margin-left: -18px;
+		position: fixed;
+		border: 1px solid lightgrey;
+		border-radius: 5px;
+		padding: 10px 10px;
+	}
+
+	.index-col2 {
+		margin-top: 5%;
+		margin-left: 27%;
+	}
+
+	.index-col3 {
+		margin-top: 5%;
+	}
+
+	#product_category {
+		width: 296px;
+		margin-bottom: 10px;
+		height: 35px;
+	}
+
+	.index-col3 h4 {
+		margin-top: 2%;
+	}
+
 	.row-2 {
 		width: 837px;
-		margin: 20px auto;
+		margin: 0px auto;
 	}
 
 	.caption-2, .thumbnail-2, .col-md-9 {
 		width: 837px;
 	}
 
-	.col-md-3, .col-md-12 {
-		margin-top: 20px;
+	.add-product {
+		width: 35%;
+		margin: 40px auto;
+		padding-top: 40px;
 	}
 
 	.product-form {
-		width: 30%;
+		margin-top: 30px;
+		width: 90%;
 	}
 
 	.product-all {
 		 height: 150px;
 	}
 
-	.product-image {
-		width: 800px;
-		height: 350px;
+	.carousel {
+		margin-bottom: 10px;
 	}
+		.carousel-control {
+			border-radius: 3.5px;
+		}
+
+		.product-image {
+			width: 800px;
+			height: 350px;
+		}
+
+		.product-img {
+			max-height: 350px;
+		    display: block;
+		    margin-left: auto;
+		    margin-right: auto;
+		}
 }
