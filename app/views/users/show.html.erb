@@ -20,7 +20,8 @@
         <% end %>
         <a href="/users/<%= current_user.id %>"><img class="navbar-brand" id="profile-pic" src="<%= asset_path( 'face.png' ) %>" /></a>
         <li><a href="/users/<%= current_user.id %>"><%= current_user.first_name %></a></li>
-        <li><a href="/carts/<%= current_user.id %>">My Cart</a></li>
+        <li><a href="/users/<%= current_user.id %>/edit">Edit Profile</a></li>
+	<li><a href="/carts/<%= current_user.id %>">My Cart</a></li>
         <li>
             <a id="logout-button" href="#">Logout</a>
                 <form id="logout" action="/sessions" method="post">

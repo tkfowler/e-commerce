@@ -15,6 +15,11 @@ class UsersController < ApplicationController
 	def show
 		@orders = current_user.product_orders
 	end
+	
+	def update
+		current_user.update(user_params)
+		redirect_to "/users/<% current_user.id %>"
+	end
 
 	private
 	def user_params
