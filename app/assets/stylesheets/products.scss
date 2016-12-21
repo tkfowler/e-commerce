@@ -36,9 +36,6 @@ body.products {
 		margin-left: 0.75%;
 		width: 20%;
 		border: 1px solid darkgrey;
-		margin-left: -7%;
-		position: fixed;
-		border: 1px solid lightgrey;
 		border-radius: 5px;
 		padding: 10px 10px;
 	}
@@ -85,7 +82,14 @@ body.products {
 		margin-right: 0px;
 	}
 
+	.description {
+		overflow: hidden;
+		height:	40px;
+	
+	}
+
 	.thumbnail {
+		height: 317px;
 		border: 1px solid darkgrey;
 	}
 

@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 			redirect_to "/users"
 		else
 			@user.save!
+			session[:id] = @user.id
 			redirect_to "/products"
 		end
 	end
