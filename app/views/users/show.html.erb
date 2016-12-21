@@ -15,11 +15,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/products/new">Add Inventory</a></li>
-        <% if false %>
         <% if current_user.admin == true %>
             <li><a href="/products/new">Add Inventory</a></li>
-        <% end %>
         <% end %>
         <a href="/users/<%= current_user.id %>"><img class="navbar-brand" id="profile-pic" src="<%= asset_path( 'face.png' ) %>" /></a>
         <li><a href="/users/<%= current_user.id %>"><%= current_user.first_name %></a></li>

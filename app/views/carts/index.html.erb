@@ -55,7 +55,7 @@
           </form>
           <a href="/carts/<%= item.id %>" data-method="delete">X</a>
         </td>
-        <td class="price">$<%= item.product.price %></td>
+        <td class="price">$<%= '%.2f' % item.product.price %></td>
       </tr>
     <% end %>
     <tr>
