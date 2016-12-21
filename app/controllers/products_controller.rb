@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
 			@name = params[:product][:name]
 			@products = Product.where("lower(name) like ?", "%" + params[:product][:name].downcase + "%")
 			@products += Product.where("lower(description) like ?", "%" + params[:product][:name].downcase + "%")
+			@products = Product.where("name like ?", "%" + params[:product][:name] + "%")
 		end
 		@top_product = Product.all.sample
   		@hot_products = (Product.all - [@top_product]).sample(2)

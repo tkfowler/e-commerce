@@ -1,13 +1,3 @@
-GIT
-  remote: git://github.com/elasticsearch/elasticsearch-rails.git
-  revision: b6d485748c71a07d064ea2a46a6da82d64a04cd7
-  specs:
-    elasticsearch-model (0.1.9)
-      activesupport (> 3)
-      elasticsearch (> 0.4)
-      hashie
-    elasticsearch-rails (0.1.9)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -63,6 +53,11 @@ GEM
       elasticsearch-transport (= 5.0.0)
     elasticsearch-api (5.0.0)
       multi_json
+    elasticsearch-model (0.1.9)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.9)
     elasticsearch-transport (5.0.0)
       faraday
       multi_json
@@ -158,8 +153,8 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.3.6)
   coffee-rails (~> 4.0.0)
-  elasticsearch-model!
-  elasticsearch-rails!
+  elasticsearch-model
+  elasticsearch-rails
   hirb
   jbuilder (~> 2.0)
   jquery-rails
