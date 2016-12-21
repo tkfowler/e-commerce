@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20161220044019) do
   create_table "product_carts", force: true do |t|
     t.integer  "product_id"
     t.integer  "user_id"
+    t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(version: 20161220044019) do
   create_table "product_orders", force: true do |t|
     t.integer  "product_id"
     t.integer  "user_id"
+    t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

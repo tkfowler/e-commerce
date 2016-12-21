@@ -3,7 +3,8 @@ class CreateProductOrders < ActiveRecord::Migration
     create_table :product_orders do |t|
       t.references :product, index: true
       t.references :user, index: true
-
+      t.integer :quantity
+      
       t.timestamps
     end
   end

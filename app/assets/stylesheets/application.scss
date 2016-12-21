@@ -15,4 +15,21 @@
 @import "bootstrap";
 @import "products.scss";
 @import "users.scss";
+@import "carts.scss";
+@import "checkout.scss";
 @import url('https://fonts.googleapis.com/css?family=Oswald');
+
+
+
+.navbar {
+	background-color: #7FCEED;
+}
+
+	#logo {
+		height: 40px;
+		padding: 5px 0 0 0;
+	}
+
+	#profile-pic {
+		padding-right: 0px;
+	}

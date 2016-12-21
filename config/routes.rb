@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'admins/index'
+  get 'orders/index'
 
 root 'users#index'
 get 'users' => 'users#index'
@@ -9,8 +9,14 @@ post 'users' => 'users#create'
 post 'products' => 'products#create'
 post 'sessions' => 'sessions#create'
 post 'carts' => 'carts#create'
+post 'orders' => 'orders#create'
+patch 'carts/:id' => 'carts#update'
 get 'products/:id' => 'products#show'
+get 'carts/:id' => 'carts#index'
+get 'checkouts/:id' => 'checkout#index'
+get 'users/:id' => 'users#show'
 delete 'sessions' => 'sessions#destroy'
+delete 'carts/:id' => 'carts#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
 	has_many :credit_cards, through: :user_credit_cards
 	has_many :product_orders
 	has_many :products, through: :product_orders
-	has_one :my_cart
-	has_many :products_in_cart, through: :my_cart, source: :product
+	has_one :product_cart
+	has_many :products_in_cart, through: :product_cart, source: :product
 	has_secure_password
 	validates :first_name, :last_name, :email, presence: :true
 	validates :email, format: { with: email_regex }, uniqueness: { case_sensitive: false }

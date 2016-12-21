@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top warning">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -8,21 +8,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">BuyNow</a>
+      <a class="navbar-brand" href="/products">BuyNow</a>
+      <a href="/products"><img class="navbar-brand" id="logo" src="<%= asset_path( 'buynow.png' ) %>" /></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/products/new">Add Inventory</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
         <% if false %>
         <% if current_user.admin == true %>
             <li><a href="/products/new">Add Inventory</a></li>
         <% end %>
         <% end %>
-        <li><a href="#">My Cart</a></li>
+        <a href="/users/<%= current_user.id %>"><img class="navbar-brand" id="profile-pic" src="<%= asset_path( 'face.png' ) %>" /></a>
+        <li><a href="/users/<%= current_user.id %>"><%= current_user.first_name %></a></li>
+        <li><a href="/carts/<%= current_user.id %>">My Cart</a></li>
         <li>
             <a id="logout-button" href="#">Logout</a>
                 <form id="logout" action="/sessions" method="post">
@@ -35,13 +36,13 @@
   </div><!-- /.container-fluid -->
 </nav>
     <!-- Page Content -->
-    <div class="container">
+    <div class="container-fluid">
 
-        <div class="row row1">
+        <div class="row product-page">
 
             <div class="col-md-3 index-col1">
                 <p class="lead">Search By...</p>
-                <form>
+                <form class="search-form">
                 	<label for="category">Category</label>
                     <br>
                     <%= select_tag :'product[category]', options_for_select((categories), disabled: :"please select", selected: :"please select") %>
@@ -49,7 +50,7 @@
                 	<label for="category">OR</label>
                 	<br>
 			        <div class="form-group">
-                	<label for="category">Product</label>
+                	<label for="category">Product / Description</label>
 			          <input type="text" name="product[name]" class="form-control" placeholder="Search">
 			        </div>
 			        <button type="submit" class="btn btn-warning">Search</button>
@@ -69,11 +70,11 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <%= image_tag @top_product.avatar.url, :class => 'top-product product-img' %>
+                                    <a class="product-img" href="products/<%= @top_product.id %>"><%= image_tag @top_product.avatar.url, :class => 'top-product' %></a>
                                 </div>
                                 <% @hot_products.each do |product| %>
                                 <div class="item">
-                                   <%= image_tag product.avatar.url, :class => 'slide-image hot-products product-img' %>
+                                   <a class="product-img" href="products/<%= product.id %>"><%= image_tag product.avatar.url, :class => 'slide-image hot-products' %></a>
                                 </div>
                                 <% end %>
                             </div>
@@ -92,7 +93,7 @@
                 <% @products.each do |product| %>
 	                    <div class="col-sm-4 col-lg-4 col-md-4">
 	                        <div class="thumbnail">
-	                            <%= image_tag product.avatar.url, :class => 'product-all' %>
+	                            <a href="products/<%= product.id %>"><%= image_tag product.avatar.url, :class => 'product-all' %></a>
 	                            <div class="caption">
 	                                <h4 class="pull-right">$<%= product.price %></h4>
 	                                <h4><a href="/products/<%= product.id %>"><%= product.name %></a>
@@ -100,14 +101,17 @@
 	                                <p><%= product.description %>.</p>
 	                            </div>
 	                            <div class="ratings">
-	                                <p class="pull-right">15 reviews</p>
-	                                <p>
-	                                    <span class="glyphicon glyphicon-star"></span>
-	                                    <span class="glyphicon glyphicon-star"></span>
-	                                    <span class="glyphicon glyphicon-star"></span>
-	                                    <span class="glyphicon glyphicon-star"></span>
-	                                    <span class="glyphicon glyphicon-star"></span>
+	                                <p class="pull-right"> <%= rand(1..20) %> reviews</p>
+                                    <% num = rand(1..5); (1..num).each do %>
+                                    <p class="star">
+                                        <span class="glyphicon glyphicon-star"></span>
 	                                </p>
+                                    <% end %>
+                                    <% (1..(5 - num)).each do %>
+                                    <p class="star">
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                    </p>
+                                    <% end %>
 	                            </div>
 	                        </div>
 	                    </div>

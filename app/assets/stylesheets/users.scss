@@ -5,12 +5,15 @@
 
 body.users {
 
+	.landing-page{
 		background-image: url("back1.png");
 		margin: 0px auto;
 		background-repeat: no-repeat;
 		background-size: 100%;
 		width: 100%;
-		padding: 20px 40px 0px 40px;
+		height: 980px;
+		padding: 20px 60px 0px 40px;
+	}
 
 	form {
 		margin-top: 50px;
@@ -32,12 +35,14 @@ body.users {
 	}
 
 	#login {
-		margin-left: 55%;
+		margin-left: 65%;
+		margin-top: 8%;
 	}
 
 	#reg {
-		width: 35%;
-		float: right;
+		width: 28%;
+		margin-left: 65%;
+		display: inline-block;
 		margin-top: 4%;
 	}
 
@@ -52,5 +57,46 @@ body.users {
 
 	.error {
 		margin-bottom: 5px;
+	}
+
+	.navbar-default {
+		height: 50px;
+		margin-bottom: 0px;
+	}
+
+		.navbar-default a {
+			color: #424242;
+			font-family: 'Oswald';
+		}
+
+	.navbar-header {
+		padding-left: 60px;
+	}
+
+	.navbar-right {
+		padding-right: 30px;
+	}
+
+		.navbar-brand {
+			font-size: 225%;
+		}
+
+	.row3 {
+		margin: 0px auto;
+		width: 50%;
+	}
+
+	.col-md-6 {
+		width: 100%;
+	}	
+
+	#orders h2 {
+		width: 100%;
+	}
+
+	#home-logo {
+		font-size: 130px;
+		display: inline-block;
+		margin-top: 0;
 	}
 }

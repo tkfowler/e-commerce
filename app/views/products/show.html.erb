@@ -9,14 +9,15 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/products">BuyNow</a>
+      <a href="/products"><img class="navbar-brand" id="logo" src="<%= asset_path( 'buynow.png' ) %>" /></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">My Cart</a></li>
+      <a href="/users/<%= current_user.id %>"><img class="navbar-brand" id="profile-pic" src="<%= asset_path( 'face.png' ) %>" /></a>
+        <li><a href="/users/<%= current_user.id %>"><%= current_user.first_name %></a></li>
+        <li><a href="/carts/<%= current_user.id %>">My Cart</a></li>
         <li>
             <a id="logout-button" href="#">Logout</a>
                 <form id="logout" action="/sessions" method="post">
@@ -42,11 +43,7 @@
                         <h4 class="pull-right">$<%= @product.price %></h4>
                         <h4><%= @product.name %></h4>
                         <div class="caption-full">
-                        <p><%= @product.description %>.</p>
-                        <p>Want to make these reviews work? Check out
-                            <strong><a href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this building a review system tutorial</a>
-                            </strong>over at maxoffsky.com!</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <p>DESCRIPTION <%= @product.description %></p>
                     </div>
                     <br>
                     <form action="/carts" method="post">
@@ -83,7 +80,7 @@
                             <span class="glyphicon glyphicon-star"></span>
                             <span class="glyphicon glyphicon-star"></span>
                             <span class="glyphicon glyphicon-star-empty"></span>
-                            Anonymous
+                            Theodore Roosevelt
                             <span class="pull-right">10 days ago</span>
                             <p>This product was great in terms of quality. I would definitely buy another!</p>
                         </div>
@@ -96,7 +93,7 @@
                             <span class="glyphicon glyphicon-star"></span>
                             <span class="glyphicon glyphicon-star"></span>
                             <span class="glyphicon glyphicon-star-empty"></span>
-                            Anonymous
+                            George Washington
                             <span class="pull-right">12 days ago</span>
                             <p>I've alredy ordered another one!</p>
                         </div>
@@ -109,7 +106,7 @@
                             <span class="glyphicon glyphicon-star"></span>
                             <span class="glyphicon glyphicon-star"></span>
                             <span class="glyphicon glyphicon-star-empty"></span>
-                            Anonymous
+                            Abraham Lincoln
                             <span class="pull-right">15 days ago</span>
                             <p>I've seen some better than this, but not at this price. I definitely recommend this item.</p>
                         </div>
@@ -128,7 +125,7 @@
 
         <!-- Footer -->
         <footer>
-            <div class="row">
+            <div class="row"></div>
         </footer>
 
     </div>

@@ -11,10 +11,8 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def edit
-	end
-
-	def delete
+	def show
+		@orders = current_user.product_orders
 	end
 
 	private
