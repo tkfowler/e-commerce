@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 	has_one :product_cart
 	has_many :products_in_cart, through: :product_cart, source: :product
 	has_secure_password
+	has_attached_file :avatar
+	validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 	validates :first_name, :last_name, :email, presence: :true
 	validates :email, format: { with: email_regex }, uniqueness: { case_sensitive: false }
 end

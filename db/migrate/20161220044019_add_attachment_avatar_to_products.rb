@@ -5,7 +5,7 @@ class AddAttachmentAvatarToProducts < ActiveRecord::Migration
     end
   end
 
-  def self.down
-    remove_attachment :products, :avatar
-  end
+  # def self.down
+  #   remove_attachment :products, :avatar
+  # end
 end

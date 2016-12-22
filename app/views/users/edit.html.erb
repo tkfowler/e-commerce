@@ -15,10 +15,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <% if false %>
         <% if current_user.admin == true %>
             <li><a href="/products/new">Add Inventory</a></li>
         <% end %>
+        <% end %>
+        <% if current_user.avatar_file_name == nil %>
         <a href="/users/<%= current_user.id %>"><img class="navbar-brand" id="profile-pic" src="<%= asset_path( 'face.png' ) %>" /></a>
+        <% else %>
+        <a href="/users/<%= current_user.id %>"><%= image_tag current_user.avatar.url, :class => 'navbar-brand profile-pic', :id => 'profile-pic' %></a>
+        <% end %>
         <li><a href="/users/<%= current_user.id %>"><%= current_user.first_name %></a></li>
         <li><a href="/carts/<%= current_user.id %>">My Cart</a></li>
         <li>
@@ -34,24 +40,24 @@
   <div class="container">
 	<div class="row row3">
   		<div class="col-md-6">
-			<form action="/users/<%= current_user.id %>" method="post">
+			<form action="/users/<%= current_user.id %>" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 			  <div class="form-group">
 			<input type="hidden" name="_method" value="patch">
-			    <input type="text" class="form-control" id="first_name" name="user[first_name]" placeholder="First Name">
+			    <input type="text" class="form-control" id="first_name" name="user[first_name]" value="<%= current_user.first_name %>" />
 			  </div>
 			   <div class="form-group">
-			    <input type="text" class="form-control" id="last_name" name="user[last_name]" placeholder="Last Name">
+			    <input type="text" class="form-control" id="last_name" name="user[last_name]" value="<%= current_user.last_name %>" />
 			  </div>
 			  <div class="form-group">
-			    <input type="text" class="form-control" id="email" name="user[email]" placeholder="Email">
+			    <input type="text" class="form-control" id="email" name="user[email]" value="<%= current_user.email %>" />
 			  </div>
-			  <div class="form-group">
+			  <!-- <div class="form-group">
 			    <input type="password" class="form-control" id="password" name="user[password]" placeholder="Password">
 			  </div>
 			   <div class="form-group">
 			    <input type="password" class="form-control" id="password" name="user[password_confirmation]" placeholder="Password Confirmation">
-			  </div>
+			  </div> -->
 			  <div class="form-group">
 			  <label for="select">Add a Profile Picture</label>
 				<input type="file" class="form-control" id="image" name="user[avatar]">
