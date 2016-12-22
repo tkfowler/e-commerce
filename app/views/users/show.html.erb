@@ -39,15 +39,21 @@
           <tr>
             <th>Order No.</th>
             <th>Item</th>
-            <th>Price</th>
             <th>Quantity</th>
+            <th>Price</th>
+            <th>Date</th>
           </tr>
           <% @orders.each do |item| %>
           <tr>
-              <td>1</td>
+              <% if item.numbers %>
+              <td><%= item.numbers %></td>
+              <% else %>
+              <td></td>
+              <% end %>
               <td><%= item.product.name %></td>
-              <td><%= item.product.price %></td>
-              <td><%= item.quantity %></td>
+              <td><%= item.quantity %>
+              <td><%=  '%.2f' % (item.product.price * item.quantity).round(2)%></td>
+              <td><%= item.created_at.strftime('%m/%d/%Y') %></td>
           </tr>
           <% end %>
         </table>

@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@orders = current_user.product_orders
+		@orders = current_user.product_orders.order(created_at: :asc)
 	end
 
 	private
