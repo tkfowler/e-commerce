@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 20161221232526) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
+    t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "avatar_file_name"

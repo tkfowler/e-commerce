@@ -2,20 +2,22 @@ class ProductsController < ApplicationController
 
   	def index
   		if params[:product] == nil
-  			@products = Product.all
+  			@products = Product.order(price: :desc)
   		elsif params[:product][:category] == nil and params[:product][:name] == ''
-			@products = Product.all
+			@products = Product.order(price: :desc)
   		elsif params[:product][:category] != nil and params[:product][:name] == ''
   			@category = Category.find_by(name:params[:product][:category])
-			@products = Product.where(category:@category.id)
+			@products = Product.where(category:@category.id).order(:price)
 		elsif params[:product][:name] != '' and params[:product][:category] == nil
 			@name = params[:product][:name]
 			@products = Product.where("lower(name) like ?", "%" + params[:product][:name].downcase + "%")
 			@products += Product.where("lower(description) like ?", "%" + params[:product][:name].downcase + "%")
+			@products.order(:price)
 		else
 			@products = @products = Product.where("lower(name) like ?", "%" + params[:product][:name].downcase + "%")
   			@category = Category.find_by(name:params[:product][:category])
 			@products += Product.where(category:@category.id)
+			@products.order(:price)
 		end
 		@top_product = Product.all.sample
   		@hot_products = (Product.all - [@top_product]).sample(2)
