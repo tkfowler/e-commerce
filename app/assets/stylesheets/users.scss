@@ -83,8 +83,12 @@ body.users {
 
 	.row3 {
 		margin: 0px auto;
-		width: 100%;
+		width: 50%;
 	}
+
+		.col3 {
+			width: 100%;
+	 	}
 
 	#orders {
 		margin-left: 9%;
@@ -124,4 +128,8 @@ body.users {
 			max-width: 100%;
 			padding: 0px;
 		}
+	.row4 {
+                margin: 0px auto;
+                width: 100%;
+        }
 }

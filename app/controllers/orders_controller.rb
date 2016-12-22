@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
 		ProductOrder.create(product:item.product, user:current_user, quantity:item.quantity)
 	end
 	@order = ProductOrder.last.id
-  	redirect_to "/users/#{current_user.id}"
+	@cart_items.destroy_all
+	redirect_to "/users/#{current_user.id}"
   end
 end
